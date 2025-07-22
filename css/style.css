@@ -1,7 +1,7 @@
 /* Fix dropdown arrow icon for navigation menu */
 .site-navbar .site-navigation .site-menu .has-children > a:before {
-  content: "\e313";
-  font-family: 'icomoon' !important;
+  content: "\f107";
+  font-family: 'FontAwesome', 'icomoon', sans-serif !important;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -499,14 +499,14 @@ a {
         padding-right: 20px; }
         .site-navbar .site-navigation .site-menu .has-children > a:before {
           position: absolute;
-          content: "\e313";
+          content: "\f107";
           font-size: 16px;
           top: 50%;
           right: 0;
           -webkit-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
           transform: translateY(-50%);
-          font-family: 'icomoon'; }
+          font-family: 'FontAwesome', 'icomoon', sans-serif; }
       .site-navbar .site-navigation .site-menu .has-children .dropdown {
         visibility: hidden;
         opacity: 0;
