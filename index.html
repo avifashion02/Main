@@ -127,6 +127,24 @@
       </div>
     </section>
     <!-- End Strip 3 -->
+    <!-- Strip 4: Fashion Make up Gallery -->
+    <section class="strip-4">
+      <div class="strip-4-inner">
+        <h2 class="strip-4-title">Our Fashion Make up</h2>
+        <div class="strip-4-gallery" id="lightgallery-fashion">
+          <a href="images/f1.jpg" class="strip-4-photo" data-lg-size="1400-933"><img src="images/f1.jpg" alt="Fashion 1"></a>
+          <a href="images/f2.jpg" class="strip-4-photo" data-lg-size="1400-933"><img src="images/f2.jpg" alt="Fashion 2"></a>
+          <a href="images/f3.jpg" class="strip-4-photo" data-lg-size="1400-933"><img src="images/f3.jpg" alt="Fashion 3"></a>
+          <a href="images/f4.jpg" class="strip-4-photo" data-lg-size="1400-933"><img src="images/f4.jpg" alt="Fashion 4"></a>
+          <a href="images/f5.jpg" class="strip-4-photo" data-lg-size="1400-933"><img src="images/f5.jpg" alt="Fashion 5"></a>
+          <a href="images/f6.jpg" class="strip-4-photo" data-lg-size="1400-933"><img src="images/f6.jpg" alt="Fashion 6"></a>
+        </div>
+        <div class="strip-4-btn-wrap">
+          <a href="single.html" class="strip-4-btn">See more</a>
+        </div>
+      </div>
+    </section>
+    <!-- End Strip 4 -->
     <!-- Footer Start -->
     <footer class="site-footer-custom redesigned-footer">
       <div class="container-fluid">
@@ -165,6 +183,108 @@
 
 
   <style>
+    /* Strip 4: Fashion Make up Gallery Styles */
+    .strip-4 {
+      width: 100vw;
+      background: #f8f6f3;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 420px;
+      position: relative;
+      z-index: 1;
+    }
+    .strip-4-inner {
+      width: 100vw;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 0 32px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .strip-4-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #bfa76a;
+      margin-bottom: 32px;
+      letter-spacing: 0.01em;
+      text-align: center;
+    }
+    .strip-4-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .strip-4-photo img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+      background: #fff;
+      transition: transform 0.2s;
+      margin-bottom: 0;
+      display: block;
+    }
+    .strip-4-photo img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+    }
+    .strip-4-btn-wrap {
+      text-align: center;
+      margin-top: 8px;
+    }
+    .strip-4-btn {
+      display: inline-block;
+      padding: 10px 32px;
+      font-size: 1.08rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #bfa76a;
+      color: #fff;
+      border-radius: 24px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: background 0.2s, color 0.2s;
+    }
+    .strip-4-btn:hover {
+      background: #d32f2f;
+      color: #fff;
+    }
+    @media (max-width: 991.98px) {
+      .strip-4-inner {
+        padding: 32px 0 18px 0;
+      }
+      .strip-4-title {
+        font-size: 1.4rem;
+        margin-bottom: 18px;
+      }
+      .strip-4-gallery {
+        gap: 10px;
+      }
+      .strip-4-photo img {
+        width: 44vw;
+        height: 44vw;
+        min-width: 120px;
+        min-height: 120px;
+        max-width: 160px;
+        max-height: 160px;
+        border-radius: 10px;
+      }
+      .strip-4-btn {
+        padding: 8px 18px;
+        font-size: 1rem;
+        border-radius: 18px;
+      }
+    }
     /* Strip 2: Split Text & Image Section Styles */
     .strip-2 {
       width: 100vw;
