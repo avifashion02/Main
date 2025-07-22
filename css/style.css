@@ -1,19 +1,11 @@
-/* Fix dropdown arrow icon for navigation menu */
+/* Simple dropdown arrow for navigation menu */
 .site-navbar .site-navigation .site-menu .has-children > a:before {
-  content: "\f107";
-  font-family: 'FontAwesome', 'icomoon', sans-serif !important;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  content: "↓";
   display: inline-block;
-  margin-left: 6px;
-  font-size: 16px;
+  margin-left: 4px;
+  font-size: 1em;
+  color: #888;
   vertical-align: middle;
-  color: #111;
 }
 /* Strip 3: Bridal Make up Gallery Styles (matching Strip 4) */
 .strip-3 {
