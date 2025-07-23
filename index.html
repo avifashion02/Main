@@ -962,7 +962,7 @@
         plugins: [],
         appendSubHtmlTo: '',
         exThumbImage: '',
-        hideBarsDelay: 0,
+        hideBarsDelay: 0, // <-- set to 0 to never auto-hide controls
         closable: true,
         escKey: true,
         swipeThreshold: 50,
@@ -980,7 +980,10 @@
         actualSize: false,
         autoplay: false,
         autoplayControls: false,
-        showAfterLoad: true
+        showAfterLoad: true,
+        // Prevent auto-hide of toolbar/buttons
+        controlsHide: false,
+        mousewheel: true
       };
       $('#lightgallery').lightGallery(gallerySettings);
       $('#lightgallery-fashion').lightGallery(gallerySettings);
