@@ -789,9 +789,37 @@
     });
   </script>
   
+
   <script>
     $(document).ready(function(){
-      $('#lightgallery').lightGallery();
+      // Common settings for both galleries
+      var gallerySettings = {
+        selector: 'a',
+        download: false,
+        getCaptionFromTitleOrAlt: false,
+        addClass: '',
+        mode: 'lg-fade',
+        subHtmlSelectorRelative: true,
+        subHtml: '',
+        plugins: [],
+        appendSubHtmlTo: '',
+        exThumbImage: '',
+        hideBarsDelay: 0,
+        closable: true,
+        escKey: true,
+        swipeThreshold: 50,
+        enableDrag: true,
+        speed: 400,
+        hideControlOnEnd: false,
+        loop: true,
+        // No captions, no thumbnails, no download, no zoom, no share
+        controls: true,
+        counter: true,
+        // Make sure both have the same look
+        slideEndAnimatoin: true
+      };
+      $('#lightgallery').lightGallery(gallerySettings);
+      $('#lightgallery-fashion').lightGallery(gallerySettings);
     });
   </script>
 
