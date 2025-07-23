@@ -91,7 +91,11 @@
             </div>
             <!-- Mobile social icons -->
             <div class="d-xl-none d-inline-block ml-md-0 mr-auto py-3" style="position: relative; top: 3px;">
-              <a href="#" class="site-menu-toggle js-menu-toggle text-black" style="margin-right: 12px;"><span class="icon-menu h3"></span></a>
+              <div class="hamburger js-hamburger" aria-label="Open menu" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
               <span class="footer-social-icons">
                 <a href="https://www.facebook.com/muaabhijit" target="_blank" rel="noopener" aria-label="Facebook"><span class="icon-facebook"></span></a>
                 <a href="https://www.instagram.com/abhijitkayal11" target="_blank" rel="noopener" aria-label="Instagram"><span class="icon-instagram"></span></a>
@@ -227,13 +231,27 @@
     /* Hide lightGallery close/cross button box background on mobile */
     @media (max-width: 991.98px) {
       .lg-outer .lg-toolbar .lg-close {
-        background: none !important;
-        box-shadow: none !important;
-        border-radius: 0 !important;
+        background: rgba(0,0,0,0.55) !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.18) !important;
+        border-radius: 50% !important;
         color: #fff !important;
         font-size: 2.2rem !important;
         top: 10px !important;
         right: 10px !important;
+        width: 44px !important;
+        height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border: 2px solid #fff !important;
+        z-index: 9999 !important;
+        opacity: 0.95 !important;
+        transition: background 0.2s, color 0.2s;
+      }
+      .lg-outer .lg-toolbar .lg-close:hover {
+        background: #fff !important;
+        color: #d32f2f !important;
+        border-color: #d32f2f !important;
       }
       .lg-outer .lg-toolbar {
         background: transparent !important;
@@ -243,7 +261,7 @@
     /* Mobile menu style override */
     @media (max-width: 991.98px) {
       .site-navbar .site-menu {
-        display: block !important;
+        display: none !important;
         background: #fff !important;
         box-shadow: 0 2px 8px rgba(0,0,0,0.07);
         border-radius: 0 0 12px 12px;
@@ -254,6 +272,9 @@
         left: 0;
         width: 100vw;
         z-index: 2000;
+      }
+      .site-navbar .site-menu.open {
+        display: block !important;
       }
       .site-navbar .site-menu > li {
         display: block;
@@ -284,6 +305,33 @@
         padding: 10px 0 10px 18px;
         font-size: 1rem;
         color: #bfa76a;
+      }
+      /* Hamburger icon style */
+      .hamburger {
+        width: 36px;
+        height: 36px;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        z-index: 3000;
+      }
+      .hamburger span {
+        display: block;
+        height: 4px;
+        width: 28px;
+        background: #d32f2f;
+        margin: 6px auto;
+        border-radius: 2px;
+        transition: all 0.3s;
+      }
+      .hamburger.active span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+      }
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
       }
     }
     /* Minimal dropdown arrow for navigation menu */
@@ -772,6 +820,29 @@
   <script src="js/jquery.mousewheel.min.js"></script>
 
   <script src="js/main.js"></script>
+  <script>
+    // Hamburger menu toggle for mobile
+    $(document).ready(function(){
+      var $hamburger = $('.js-hamburger');
+      var $mobileMenu = $('.site-navbar .site-menu.d-lg-none');
+      $hamburger.on('click', function(){
+        $(this).toggleClass('active');
+        $mobileMenu.toggleClass('open');
+      });
+      $hamburger.on('keypress', function(e){
+        if(e.which === 13 || e.which === 32) { // Enter or Space
+          $(this).trigger('click');
+        }
+      });
+      // Close menu when clicking outside
+      $(document).on('click touchstart', function(e) {
+        if (!$(e.target).closest('.js-hamburger, .site-navbar .site-menu.d-lg-none').length) {
+          $hamburger.removeClass('active');
+          $mobileMenu.removeClass('open');
+        }
+      });
+    });
+  </script>
   <script>
     // Initialize Owl Carousel for Strip 1 slideshow
     $(document).ready(function(){
