@@ -172,10 +172,10 @@
         <div class="row align-items-center py-3">
           <div class="col-12 col-md-4 text-center text-md-left mb-2 mb-md-0">
             <span class="footer-section-title">Socials</span>
-            <span class="footer-social-icons ml-2">
-              <a href="https://www.facebook.com/muaabhijit" target="_blank" rel="noopener" aria-label="Facebook"><span class="icon-facebook"></span></a>
-              <a href="https://www.instagram.com/abhijitkayal11" target="_blank" rel="noopener" aria-label="Instagram"><span class="icon-instagram"></span></a>
-              <a href="https://www.youtube.com/@abhijitkayal6753" target="_blank" rel="noopener" aria-label="YouTube"><span class="icon-youtube-play"></span></a>
+            <span class="footer-social-icons ml-2" style="display: inline-block !important;">
+              <a href="https://www.facebook.com/muaabhijit" target="_blank" rel="noopener" aria-label="Facebook" style="color: #d32f2f; font-size: 1.3rem; margin: 0 6px; display: inline-block;"><span class="icon-facebook"></span></a>
+              <a href="https://www.instagram.com/abhijitkayal11" target="_blank" rel="noopener" aria-label="Instagram" style="color: #d32f2f; font-size: 1.3rem; margin: 0 6px; display: inline-block;"><span class="icon-instagram"></span></a>
+              <a href="https://www.youtube.com/@abhijitkayal6753" target="_blank" rel="noopener" aria-label="YouTube" style="color: #d32f2f; font-size: 1.3rem; margin: 0 6px; display: inline-block;"><span class="icon-youtube-play"></span></a>
             </span>
           </div>
           <div class="col-12 col-md-4 text-center mb-2 mb-md-0">
@@ -204,6 +204,88 @@
 
 
   <style>
+    /* Gallery mobile optimization */
+    @media (max-width: 991.98px) {
+      .strip-3-gallery, .strip-4-gallery {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        margin-bottom: 16px;
+      }
+      .strip-3-photo img, .strip-4-photo img {
+        width: 44vw;
+        height: 44vw;
+        min-width: 100px;
+        min-height: 100px;
+        max-width: 140px;
+        max-height: 140px;
+        border-radius: 10px;
+        margin-bottom: 0;
+      }
+    }
+    /* Hide lightGallery close/cross button box background on mobile */
+    @media (max-width: 991.98px) {
+      .lg-outer .lg-toolbar .lg-close {
+        background: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        color: #fff !important;
+        font-size: 2.2rem !important;
+        top: 10px !important;
+        right: 10px !important;
+      }
+      .lg-outer .lg-toolbar {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+    }
+    /* Mobile menu style override */
+    @media (max-width: 991.98px) {
+      .site-navbar .site-menu {
+        display: block !important;
+        background: #fff !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        border-radius: 0 0 12px 12px;
+        padding: 12px 0 8px 0;
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vw;
+        z-index: 2000;
+      }
+      .site-navbar .site-menu > li {
+        display: block;
+        text-align: left;
+        padding: 0 18px;
+        margin: 0;
+      }
+      .site-navbar .site-menu > li > a {
+        display: block;
+        padding: 12px 0;
+        color: #222;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #eee;
+      }
+      .site-navbar .site-menu .has-children > a:after {
+        float: right;
+        margin-left: 0;
+      }
+      .site-navbar .site-menu .dropdown {
+        position: static;
+        background: #f8f6f3;
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0 0 0 12px;
+        padding: 0;
+      }
+      .site-navbar .site-menu .dropdown > li > a {
+        padding: 10px 0 10px 18px;
+        font-size: 1rem;
+        color: #bfa76a;
+      }
+    }
     /* Minimal dropdown arrow for navigation menu */
     .site-navbar .site-navigation .site-menu .has-children > a:after {
       content: "\25BC"; /* Unicode down arrow ▼ */
@@ -812,11 +894,17 @@
         speed: 400,
         hideControlOnEnd: false,
         loop: true,
-        // No captions, no thumbnails, no download, no zoom, no share
         controls: true,
         counter: true,
-        // Make sure both have the same look
-        slideEndAnimatoin: true
+        slideEndAnimatoin: true,
+        // Mobile optimization: hide thumbnails, zoom, share, download, and always hide subHtml
+        thumbnail: false,
+        zoom: false,
+        share: false,
+        actualSize: false,
+        autoplay: false,
+        autoplayControls: false,
+        showAfterLoad: true
       };
       $('#lightgallery').lightGallery(gallerySettings);
       $('#lightgallery-fashion').lightGallery(gallerySettings);
