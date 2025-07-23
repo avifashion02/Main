@@ -44,9 +44,23 @@
           <div class="col-6 col-xl-2" data-aos="fade-down">
             <h1 class="mb-0"><a href="/" class="site-logo"><img src="images/logo.jpg" alt="Abhijit Kayal Make Up Artist"><span class="sr-only">Abhijit Kayal</span></a></h1>
           </div>
-          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+          <div class="col-10 col-md-8" data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                <li class="active"><a href="/">Home</a></li>
+                <li class="has-children">
+                  <a href="single.html">Gallery</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Bridal Make up</a></li>
+                    <li><a href="#">Fashion Make up</a></li>
+                  </ul>
+                </li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+              <!-- Mobile menu -->
+              <ul class="site-menu js-clone-nav d-lg-none d-block">
                 <li class="active"><a href="/">Home</a></li>
                 <li class="has-children">
                   <a href="single.html">Gallery</a>
@@ -67,7 +81,6 @@
                 <li>
                   <a href="https://www.facebook.com/muaabhijit" class="pl-0 pr-3" target="_blank" rel="noopener"><span class="icon-facebook"></span></a>
                 </li>
-                <!-- Removed Pinterest and Behance social icons -->
                 <li>
                   <a href="https://www.instagram.com/abhijitkayal11" class="pl-3 pr-3" target="_blank" rel="noopener"><span class="icon-instagram"></span></a>
                 </li>
@@ -76,7 +89,15 @@
                 </li>
               </ul>
             </div>
-            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+            <!-- Mobile social icons -->
+            <div class="d-xl-none d-inline-block ml-md-0 mr-auto py-3" style="position: relative; top: 3px;">
+              <a href="#" class="site-menu-toggle js-menu-toggle text-black" style="margin-right: 12px;"><span class="icon-menu h3"></span></a>
+              <span class="footer-social-icons">
+                <a href="https://www.facebook.com/muaabhijit" target="_blank" rel="noopener" aria-label="Facebook"><span class="icon-facebook"></span></a>
+                <a href="https://www.instagram.com/abhijitkayal11" target="_blank" rel="noopener" aria-label="Instagram"><span class="icon-instagram"></span></a>
+                <a href="https://www.youtube.com/@abhijitkayal6753" target="_blank" rel="noopener" aria-label="YouTube"><span class="icon-youtube-play"></span></a>
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -183,10 +204,20 @@
 
 
   <style>
-    /* Use browser default dropdown arrow for navigation menu */
-    .site-navbar .site-navigation .site-menu .has-children > a:before {
-      content: "";
-      display: none;
+    /* Minimal dropdown arrow for navigation menu */
+    .site-navbar .site-navigation .site-menu .has-children > a:after {
+      content: "\25BC"; /* Unicode down arrow ▼ */
+      font-size: 0.7em;
+      color: #bfa76a;
+      margin-left: 7px;
+      vertical-align: middle;
+      transition: color 0.2s;
+      position: relative;
+      top: -1px;
+    }
+    .site-navbar .site-navigation .site-menu .has-children:hover > a:after,
+    .site-navbar .site-navigation .site-menu .has-children:focus > a:after {
+      color: #d32f2f;
     }
     /* Strip 4: Fashion Make up Gallery Styles */
     .strip-4 {
